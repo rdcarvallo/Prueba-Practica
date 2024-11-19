@@ -1,0 +1,14 @@
+<h1 class="text-3xl font-bold underline">
+    {{ titulo() }}
+</h1>
+<div class="flex flex-row w-full p-4">
+    <div clas="w-1/4 mr-2">
+        <ul>
+            <li><a routerLink='/lista-regiones'>Regiones</a></li>
+            <li><a routerLink='/lista-comunas'>Comunas</a></li>
+        </ul>
+    </div>
+    <div class="w-1/2 ml-2"><router-outlet></router-outlet></div>
+</div>
+
+

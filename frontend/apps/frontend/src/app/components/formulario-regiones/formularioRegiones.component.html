@@ -1,0 +1,32 @@
+<div class="flex flex-col w-full">
+    @if(editar){
+        <h3>Editando region</h3>
+    }
+    @else{
+        <h3>Nueva region</h3>
+    }
+    <form [formGroup]="formularioRegion" class="flex flex-col w-3/4">
+        <div class="flex flex-row py-2">
+            <label for="id" class="w-1/4">Id</label>
+            <input id="id" formControlName="id" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" [readonly]="editar"/>
+        </div>
+        <div class="flex flex-row py-2">
+            <label for="nombre" class="w-1/4">Nombre</label>
+            <input id="nombre" formControlName="nombre"  class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+        </div>
+        <div class="flex flex-row py-2">
+            <label for="codigo" class="w-1/4">Codigo</label>
+            <input id="codigo" formControlName="codigo" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+        </div>
+    </form>
+    <div class="flex flex-row">
+    @if(editar){
+        <button class="h-8 px-4 m-2 font-semibold rounded-md bg-black text-white" (click)="update()">Guardar</button>
+        <button class="h-8 px-4 m-2 font-semibold rounded-md bg-red-900 text-white" (click)="cancel()">Cancelar</button>
+    }
+    @else{
+        <button class="h-8 px-4 m-2 font-semibold rounded-md bg-black text-white" (click)="save()">Guardar</button>
+        <button class="h-8 px-4 m-2 font-semibold rounded-md bg-red-900 text-white" (click)="cancel()">Cancelar</button>
+    }
+    </div>
+</div>

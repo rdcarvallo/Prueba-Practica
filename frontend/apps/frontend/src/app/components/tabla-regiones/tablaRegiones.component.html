@@ -1,0 +1,22 @@
+<div class="flex flex-col w-full">
+    <table class="table-auto border-collapse border border-slate-400">
+        <tr>
+            <th class="border border-slate-400">ID</th>
+            <th class="border border-slate-400">NOMBRE</th>
+            <th class="border border-slate-400">CODIGO</th>
+            <th class="border border-slate-400">ACCIONES</th>
+        </tr>
+        @for(region of regiones(); track region){
+            <tr>
+                <td class="border border-slate-400">{{region.id}}</td>
+                <td class="border border-slate-400">{{region.nombre}}</td>
+                <td class="border border-slate-400 text-center">{{region.codigo}}</td>
+                <td class="border border-slate-400">
+                    <button class="h-8 px-4 m-2 font-semibold rounded-md bg-black text-white" (click)="edit(region.id)">Editar</button>
+                    <button class="h-8 px-4 m-2 font-semibold rounded-md bg-red-900 text-white"(click)="delete(region.id)">Eliminar</button>
+                </td>
+            </tr>
+        }
+    </table>
+    <button class="h-8 px-4 m-2 font-semibold rounded-md bg-black text-white" (click)="add()">Agregar</button>
+</div>
